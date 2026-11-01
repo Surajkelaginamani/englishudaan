@@ -1,0 +1,163 @@
+/* =================================================================
+   English Udaan — Luxury Product Launch Website
+   Custom Styles, RTL Urdu Typography & Interaction Layers
+   ================================================================= */
+
+/* Smooth native scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base Body */
+body {
+  background-color: #050a0e;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* =================================================================
+   URDU TYPOGRAPHY & RTL SUPPORT
+   ================================================================= */
+html[lang="ur"],
+.lang-ur {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Plus Jakarta Sans', sans-serif;
+}
+
+html[lang="ur"] h1,
+html[lang="ur"] h2,
+html[lang="ur"] h3,
+html[lang="ur"] h4,
+html[lang="ur"] .font-display {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+  line-height: 1.45 !important;
+}
+
+html[lang="ur"] p,
+html[lang="ur"] span,
+html[lang="ur"] button,
+html[lang="ur"] a {
+  line-height: 1.75;
+}
+
+/* Urdu font utility */
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+}
+
+/* RTL adjustment helper */
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* =================================================================
+   PROMINENT NAVBAR LOGO
+   ================================================================= */
+
+/* Navbar Brand Logo: Crisp, prominent & glowing */
+.brand-nav-logo {
+  height: 3.5rem; /* 56px */
+  width: auto;
+  max-width: 58px;
+  filter: drop-shadow(0 4px 12px rgba(6, 182, 212, 0.45));
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .brand-nav-logo {
+    height: 4rem; /* 64px */
+    max-width: 66px;
+  }
+}
+
+.brand-nav-logo:hover {
+  filter: drop-shadow(0 6px 20px rgba(6, 182, 212, 0.75)) drop-shadow(0 0 25px rgba(245, 158, 11, 0.4));
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* =================================================================
+   NAVBAR FROSTED GLASS TRANSITIONS
+   ================================================================= */
+#navbar {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navbar.scrolled {
+  background: rgba(5, 10, 14, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: rgba(6, 182, 212, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+/* =================================================================
+   SMARTPHONE REALISTIC MOCKUP EFFECTS
+   ================================================================= */
+@keyframes floatPhone {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(0.4deg);
+  }
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatPhone 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatBadge 5s ease-in-out infinite;
+}
+
+/* =================================================================
+   POPUP MODAL ANIMATION
+   ================================================================= */
+#iosModal.active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#iosModal.active #iosModalCard {
+  transform: scale(1) translateY(0) !important;
+}
+
+/* =================================================================
+   CUSTOM SCROLLBAR
+   ================================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050a0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e7490;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* =================================================================
+   PREFERS REDUCED MOTION
+   ================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
